@@ -1,13 +1,10 @@
 # PoliTO videolezioni downloader
-[Bookmarklet](https://it.wikipedia.org/wiki/Bookmarklet) che permette di avere tutti i link diretti al file `.mp4` delle videolezioni di un corso in una sola pagina.
-I link sono da scaricare a mano, o con un download manager come [JDownloader](http://jdownloader.org/jdownloader2).
+A [Bookmarklet](https://it.wikipedia.org/wiki/Bookmarklet) that lets you easily download videos from the old PoliTO video-platform (under Materiali). 
 
-## Come funziona
-### Per installarlo:
-Crea un preferito di qualsiasi pagina -> tasto destro -> modifica.
-Incolla nel campo URL il sorgente di `main.min.js` di questa repo.
+The resulting links can be easily downloaded with JDownloader.
 
-### Per usarlo:
-Vai sulla pagina di una qualsiasi videolezione del corso che vuoi scaricare e premi sul preferito. Fatto!
+## How to install
+Create an empty bookmark but instead of a url paste the content of  `main.min.js`.
 
-###### Testato solo su Google Chrome!
+## How to use
+Go on the page with the list of videolectures and click on the bookmark
