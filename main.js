@@ -44,9 +44,9 @@ javascript:(async function() {
         if (videoUrl) urls.push(videoUrl);
     }
 
-    const urlsText = urls.join(",");
+    const urlsText = urls.join("\n");
 
-    document.documentElement.innerHTML = `Found ${urls.length} videos. You can use the following with JDownloader: <br> The text should already be copied into the clipboard <br><br>`;
+    document.documentElement.innerHTML = `Found ${urls.length} videos. You can use the following with JDownloader: <br> The text has been automatically copied into the clipboard <br><br>`;
     document.documentElement.innerHTML += `<textarea readonly>${urlsText}</textarea>`
 
     navigator.clipboard.writeText(urlsText);
