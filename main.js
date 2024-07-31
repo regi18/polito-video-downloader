@@ -19,8 +19,11 @@ javascript:(async function() {
         output.push(matches[1].replaceAll("&amp;", "&"));
     }
 
+    document.documentElement.innerHTML = `Checking ${output.length} links...`;
+
     // Function to fetch video URL
     const fetchVideoUrl = async (url) => {
+        document.documentElement.innerHTML += '.';
         try {
             const response = await fetch(baseUrl + url);
             const data = await response.text();
@@ -37,11 +40,14 @@ javascript:(async function() {
     // Fetch and display video URLs
     const urls = [];
     for (let [index, item] of output.entries()) {
-        console.log(`${index + 1} - ${item}`);
         const videoUrl = await fetchVideoUrl(item);
         if (videoUrl) urls.push(videoUrl);
     }
 
-    document.documentElement.innerHTML = `Found ${urls.length} videos. You can use the following with JDownloader: <br><br>`;
-    document.documentElement.innerHTML += urls.join(",");
+    const urlsText = urls.join(",");
+
+    document.documentElement.innerHTML = `Found ${urls.length} videos. You can use the following with JDownloader: <br> The text should already be copied into the clipboard <br><br>`;
+    document.documentElement.innerHTML += `<textarea readonly>${urlsText}</textarea>`
+
+    navigator.clipboard.writeText(urlsText);
 })()
